@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Model Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+    
+        h1 {
+            color: #333;
+            text-align: center;
+            padding: 20px 0;
+        }
+    
+        p {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Model Result</h1>
+    <p>Result Type: {{ result_type }}</p>
+    <p id="prediction">Predicted Class: {{ predicted_class }}</p>
+    <h1 id="result"></h1>
+    <script>
+        // Get the result element
+        var resultElement = document.getElementById('result');
+    
+        // Get the predicted class from the paragraph's text
+        var predictedClass = document.querySelector('p:nth-child(3)').textContent.split(': ')[1];
+    
+        // Check the predicted class and update the text accordingly
+        if (predictedClass == '1') {
+            resultElement.textContent = 'Autism Detected';
+        } else if (predictedClass == '0') {
+            resultElement.textContent = 'Autism Not Detected';
+        }
+    </script>
+</body>
+</html>

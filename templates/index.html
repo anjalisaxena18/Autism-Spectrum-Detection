@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Model Deployment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1#heading {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        form {
+            margin: 20px auto;
+            width: 80%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px 5px #00000047;
+        }
+
+        form h2 {
+            margin-bottom: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input[type="text"],
+        form input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        form button[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        form button[type="submit"]:hover {
+            background: white;
+            color: black;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="heading">Autism Detection And Care</h1>
+
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <h2>Detection By Image</h2>
+        <input type="file" name="file" accept=".jpg, .jpeg, .png">
+        <button type="submit">Predict Image</button>
+    </form>
+
+    <form action="/predict" method="post">
+        <h2>Detection By Information</h2>
+        <label for="feature1">Question 1: Does your child look at you when you call his/her name? (If yes enter "1" else "0") </label>
+        <input type="text" name="feature1" required>
+
+        <label for="feature2">Question 2: Is it easy for you to get eye contact with your child? (If yes enter "1" else "0")</label>
+        <input type="text" name="feature2" required>
+        <label for="feature3">Question 3: Does your child point to indicate that she/he wants something? (e.g. a toy that
+            is
+            out of reach) (If yes enter "1" else "0")
+        </label>
+        <input type="text" name="feature3" required>
+        <label for="feature4">Question 4: Does your child point to share interest with you? (e.g. pointing at an
+            interesting sight) (If yes enter "1" else "0")
+
+        </label>
+        <input type="text" name="feature4" required>
+
+        <label for="feature5">Question 5: Does your child pretend? (e.g. care for dolls, talk on a toy phone) (If yes enter "1" else "0")</label>
+        <input type="text" name="feature5" required>
+
+        <label for="feature6">Question 6: Does your child follow where you’re looking? (If yes enter "1" else "0")</label>
+        <input type="text" name="feature6" required>
+
+        <label for="feature7">Question 7: If you or someone else in the family is visibly upset, does your child show signs of warning to comfort them? (e.g. stroking hair, hugging them) (If yes enter "1" else "0")
+        </label>
+        <input type="text" name="feature7" required>
+        <label for="feature8">Question 8: Does your child get aggresive ? (If yes enter "1" else "0")</label>
+        <input type="text" name="feature8" required>
+        <label for="feature9">Question 9: Does your child use simple gestures ? (e.g. wave goodbye) (If yes enter "1" else "0")</label>
+        <input type="text" name="feature9" required>
+        <label for="feature10">Question 10: Does your child stare at nothing with no apparent purpose ? (If yes enter "1" else "0")</label>
+        <input type="text" name="feature10" required>
+        <label for="feature11">Question 11: Enter children age in months ?</label>
+        <input type="text" name="feature11" required>
+        <label for="feature12">Question 12: Enter the Gender ? (If male enter "0", if female enter "1")</label>
+        <input type="text" name="feature12" required>
+        <label for="feature13">Question 13: what is patient's ethinicity ?("middle eastern":0,"White European":1,"Hispanic":2,"black":3, "asian":4, "south asian"
+        :5,"Latino":6,"mixed":7,"Pacifica":8,"Native Indian":9 ,"Others" :10
+)</label>
+        <input type="text" name="feature13" required>
+        <label for="feature14">Question 14: Does patient have jaundice ? (If yes enter "1" else "0")</label>
+        <input type="text" name="feature14" required>
+        <label for="feature15">Question 15: Any family member with ASD ? (If yes enter "1" else "0")</label>
+        <input type="text" name="feature15" required>
+        <label for="feature16">Question 16: Who completed the test ? ("Self":0,"family member":1,"Others":2)</label>
+        <input type="text" name="feature16" required>
+
+        <!-- Add more input fields for additional features -->
+
+        <button type="submit">Predict By Info</button>
+    </form>
+</body>
+
+</html>
